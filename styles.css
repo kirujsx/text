@@ -1,0 +1,155 @@
+/* Tailwind-inspired color palette */
+:root {
+    --primary: #38bdf8;
+    /* Tailwind cyan */
+    --secondary: #64748b;
+    /* Tailwind slate */
+    --dark-bg: #0f172a;
+    /* Tailwind dark navy */
+    --accent: #94a3b8;
+    /* Tailwind light slate */
+    --highlight: #06b6d4;
+    /* Tailwind teal */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--accent);
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.subheading {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin-top: 10px;
+}
+
+.editor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e293b;
+    /* Slightly lighter background */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.toolbar {
+    display: flex;
+    background-color: var(--secondary);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.toolbar button {
+    background-color: #1f2937;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: var(--accent);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.toolbar button:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.editor {
+    height: 300px;
+    padding: 20px;
+    padding-left: 19px;
+    background-color: #0f172a;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    outline: none;
+    font-size: 18px;
+    color: var(--accent);
+    overflow-y: scroll;
+    line-height: 1.6;
+    transition: border-color 0.3s ease;
+}
+
+.editor::-webkit-scrollbar {
+    background-color: #0797b05a;
+    width: 6px;
+    border-radius: 13px;
+}
+
+.editor:focus {
+    border-color: var(--highlight);
+}
+
+.editor:empty:before {
+    content: attr(placeholder);
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.save-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--highlight);
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #0284c7;
+    /* Darker Tailwind cyan */
+}
+
+.output {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .editor-container {
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 1.75rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    .save-btn {
+        font-size: 14px;
+    }
+}
